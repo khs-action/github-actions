@@ -6,3 +6,7 @@ jobs:
     steps:
     - name: step1
       run: echo hello world
+    - name: step2
+      run: |
+        echo test111111111111
+        echo test22222222222
