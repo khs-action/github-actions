@@ -1,12 +1,17 @@
-name: pull-request-workflow
-on: issues
+name: timeout
+on: push
 jobs:
-  push-job:
+  timeout-job:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
     - name: step1
-      run: echo hello world
-    - name: step2
       run: |
-        echo 11111111111
-        echo 2222222222222
+        count=0
+        whie true; do
+          echo "seconds: $count"
+          count=$((count+1))
+          sleep 1
+        done
+    - name: echo
+      run: echo hello
